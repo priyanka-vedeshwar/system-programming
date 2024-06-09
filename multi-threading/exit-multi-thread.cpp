@@ -51,6 +51,9 @@ int main(){
     pthread_create(&t3,NULL,thrFunc,NULL);   
     pthread_join(t1,NULL);
     cout<<"returned from t1 \n";
+    
+    pthread_exit(0); //although pthread_exit is called in main, it waits for other threads to exit
+    
     pthread_join(t2,NULL);
     cout<<"returned from t2 \n";
     pthread_join(t3,NULL); 
